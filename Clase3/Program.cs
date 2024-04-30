@@ -1,4 +1,7 @@
-﻿namespace Clase3
+﻿using Clase3.Ejercicio_1;
+using Clase3.Ejercicio_2;
+
+namespace Clase3
 {
     internal class Program
     {
@@ -14,8 +17,10 @@
             //Modificar el metodo "ImprimirDatosVehiculo" para que pueda imprimir los datos del Vehiculo independientemente de que si es una moto o un auto 
 
             //Uso
-            //ImprimirDatosVehiculo(moto);
-            //ImprimirDatosVehiculo(auto);
+            Vehiculo moto = new Vehiculo("Yamaha", "Fz");
+            Vehiculo auto = new Vehiculo("Ford", "Fiesta");
+            ImprimirDatosVehiculo(moto);
+            ImprimirDatosVehiculo(auto);
             #endregion
 
 
@@ -24,13 +29,14 @@
             // Definir en la interfaz con una sola firma que indique que se va a obtener todos los libros
             // Implementar la interfaz en la clase biblioteca para que devuelva los libros
             // Instanciar y utilizar la clase biblioteca
+            Biblioteca biblioteca = new Biblioteca();
+            biblioteca.ObtenerLibros();
             #endregion
         }
 
-        static void ImprimirDatosVehiculo() 
-        {   
+        static void ImprimirDatosVehiculo(Vehiculo vehiculo) 
+        {
+            Console.WriteLine($"La marca del vehiculo es: {vehiculo.Marca} y el modelo es {vehiculo.Modelo}");
         }
-
-
     }
 }
